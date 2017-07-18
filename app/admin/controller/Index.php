@@ -23,7 +23,7 @@
         $redis->lpush('list','html');//从（左）头插入
         $redis->lpush('list','css');
         $redis->lpush('list','php');
-
+        $redis->del('list');
         $redis->rpush('list','js');
         $list=$redis->lrange('list',0,-1);//从0开始 结束为-1 获取开始之后的全部
         var_dump($list);
